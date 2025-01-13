@@ -50,9 +50,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/authors">Authors</a>
-                    </li>
+                    @if(Auth::check())
+                        <li class="nav-item">
+                            <a class="nav-link" href="/authors">Authors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Log out</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Authenticate</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
@@ -78,7 +87,6 @@
         </div>
     </footer>
 
-    
     <script src="/js/admin.js"></script>
 </body>
 </html>
